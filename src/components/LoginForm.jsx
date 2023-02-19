@@ -51,11 +51,14 @@ const LoginForm = () => {
                 id="email"
                 className="form-control"
               />
-              <ErrorMessage
-                name="email"
-                component="div"
-                className="error-message"
-              />
+
+              {errors.email && touched.email && (
+                <ErrorMessage
+                  name="email"
+                  component="div"
+                  className="error-message"
+                />
+              )}
             </div>
             <div className="form-group">
               <label htmlFor="password">Contraseña:</label>
@@ -65,11 +68,14 @@ const LoginForm = () => {
                 id="password"
                 className="form-control"
               />
-              <ErrorMessage
-                name="password"
-                component="div"
-                className="error-message"
-              />
+
+              {errors.password && touched.password && (
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="error-message"
+                />
+              )}
             </div>
             <button type="submit" className="btn btn-primary">
               Iniciar sesión
