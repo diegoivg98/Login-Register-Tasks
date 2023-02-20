@@ -29,7 +29,7 @@ const LoginForm = () => {
     const password = localStorage.getItem("password");
 
     if (values.email === email && values.password === password) {
-      navigate('/tasks')
+      navigate('/Login-Register-Tasks/#/register')
     } else {
       toast.error("Correo electrónico o contraseña incorrectos.", {
         position: "top-center",
@@ -90,7 +90,7 @@ const LoginForm = () => {
         )}
       </Formik>
       <p>
-        ¿No tienes una cuenta? <a href="Login-Register-Tasks/#/register">Regístrate</a>
+        ¿No tienes una cuenta? <a href="/Login-Register-Tasks/#/register">Regístrate</a>
       </p>
       <ToastContainer />
     </div>
