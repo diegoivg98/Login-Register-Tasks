@@ -90,7 +90,7 @@ const LoginForm = () => {
         )}
       </Formik>
       <p>
-        ¿No tienes una cuenta? <a href="/#/register">Regístrate</a>
+        ¿No tienes una cuenta? <a href="Login-Register-Tasks/#/register">Regístrate</a>
       </p>
       <ToastContainer />
     </div>
