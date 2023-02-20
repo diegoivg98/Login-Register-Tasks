@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import TaskForm from "./components/TaskForm";
@@ -20,13 +20,11 @@ const requireAuth = (child) => {
 function App() {
 
   return (
-    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginForm />} />
+        <Route exact path="/" element={<LoginForm />} />
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/tasks" element={requireAuth(<TaskForm />)} />
       </Routes>
-    </BrowserRouter>
   );
 }
 
