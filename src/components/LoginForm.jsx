@@ -29,7 +29,7 @@ const LoginForm = () => {
     const password = localStorage.getItem("password");
 
     if (values.email === email && values.password === password) {
-      navigate('/Login-Register-Tasks/#/register')
+      navigate('/Login-Register-Tasks/#/tasks')
     } else {
       toast.error("Correo electrónico o contraseña incorrectos.", {
         position: "top-center",
