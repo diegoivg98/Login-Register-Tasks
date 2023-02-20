@@ -1,29 +1,35 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/LoginForm.css";
 
 const LoginForm = () => {
+
+  /* Setting the initial values of the form. */
   const initialValues = {
     email: "",
     password: "",
   };
 
+  /* Validating the form. */
   const validationSchema = Yup.object().shape({
     email: Yup.string().email().required("Email es requerido"),
     password: Yup.string().required("Contraseña es requerida"),
   });
 
+  const navigate = useNavigate();
+
   const handleSubmit = (values) => {
+
+    /* Getting the email and password from local storage. */
     const email = localStorage.getItem("email");
     const password = localStorage.getItem("password");
+
     if (values.email === email && values.password === password) {
-      toast.success("¡Bienvenido de nuevo!", {
-        position: "top-center",
-        autoClose: 2000,
-      });
+      navigate('/tasks')
     } else {
       toast.error("Correo electrónico o contraseña incorrectos.", {
         position: "top-center",
