@@ -11,10 +11,9 @@ const requireAuth = (child) => {
   const storedEmail = localStorage.getItem('email');
   const storedPassword = localStorage.getItem('password');
   if (storedEmail && storedPassword) {
-    <Navigate to="/Login-Register-Tasks/#/tasks"/>
     return child;
   }
-  return <Navigate to="/" replace />;
+  return <Navigate to="/"/>;
 };
 
 function App() {
