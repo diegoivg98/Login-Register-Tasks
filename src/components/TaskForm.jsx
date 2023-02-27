@@ -29,6 +29,7 @@ const TaskForm = () => {
           level: LEVELS.NORMAL,
           done: false,
         }}
+       
         onSubmit={(values, actions) => {
           setTimeout(() => {
             tasks.push(values);
@@ -46,20 +47,11 @@ const TaskForm = () => {
               {errors && errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
             </div>
 
-            {/* <Field name="description" placeholder="Task Description" className="task-list__input"/>
-            {errors && errors.description} */}
-
             <div style={{ display: "flex", flexDirection: "column", marginBottom: "10px" }}>
               <label style={{ marginBottom: "5px" }}>Task Description</label>
               <Field name="description" placeholder="Task Description" style={{ padding: "10px", border: "1px solid #ccc", borderRadius: "5px" }} />
               {errors && errors.description && <p style={{ color: "red" }}>{errors.description}</p>}
             </div>
-
-            {/* <Field as="select" name="level" className="task-list__select">
-              <option value={LEVELS.NORMAL}>Normal</option>
-              <option value={LEVELS.URGENT}>Urgent</option>
-              <option value={LEVELS.BLOCKING}>Blocking</option>
-            </Field> */}
 
             <div style={{ display: "flex", flexDirection: "column", marginBottom: "10px" }}>
               <label style={{ marginBottom: "5px" }}>Task Level</label>
